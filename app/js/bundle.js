@@ -13,20 +13,19 @@ var formBody = (0, _jquery2['default'])('.formBody');
 // function inputText(form)
 
 function data(type, label, id, icon, options) {
-  return '\n    <input>' + type + ', ' + label + ', ' + id + ', ' + icon + ', ' + options + '</input>';
+  return '\n    <div class="formBody"><input>' + type + ', ' + label + ', ' + id + ', ' + icon + ', ' + options + '</input></div>';
 }
 
 console.log('all good');
 
-// var formReq = $.getJSON(baseURL + 'forms');
-//   formReq.then(
-//     function(res){
-//       res.results.forEach(function (form) {
-//         var html = data(form.type, form.label, form.id, form.icon, form.options);
-//         formBody.append(html);
-//       });
-//     }
-//   )
+var formReq = _jquery2['default'].getJSON(baseURL);
+formReq.then(function (res) {
+  // console.log(res.results);
+  res.forEach(function (forms) {
+    var html = data(forms.type, forms.label, forms.id, forms.icon, forms.options);
+    formBody.append(html);
+  });
+});
 
 //
 // var dataReq = $.getJSON(url);

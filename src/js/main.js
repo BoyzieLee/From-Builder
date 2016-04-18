@@ -7,20 +7,21 @@ var formBody = $('.formBody');
 
 function data (type, label, id, icon, options) {
   return `
-    <input>${type}, ${label}, ${id}, ${icon}, ${options}</input>`;
+    <div class="formBody"><input>${type}, ${label}, ${id}, ${icon}, ${options}</input></div>`;
 }
 
 console.log('all good');
 
-// var formReq = $.getJSON(baseURL + 'forms');
-//   formReq.then(
-//     function(res){
-//       res.results.forEach(function (form) {
-//         var html = data(form.type, form.label, form.id, form.icon, form.options);
-//         formBody.append(html);
-//       });
-//     }
-//   )
+var formReq = $.getJSON(baseURL);
+  formReq.then(
+    function(res){
+      // console.log(res.results);
+      res.forEach(function (forms) {
+        var html = data(forms.type, forms.label, forms.id, forms.icon, forms.options);
+        formBody.append(html);
+      });
+    }
+  )
 
 //
 // var dataReq = $.getJSON(url);
