@@ -13,7 +13,7 @@ var formBody = (0, _jquery2['default'])('.formBody');
 // function inputText(form)
 
 function data(type, label, id, icon, options) {
-  return '\n    <div class="formBody"><input>' + type + ', ' + label + ', ' + id + ', ' + icon + ', ' + options + '</input></div>';
+  return '\n    <input placeholder="' + label + '"></input>\n    <i class="fa fa-user"></i> \n    ';
 }
 
 console.log('all good');

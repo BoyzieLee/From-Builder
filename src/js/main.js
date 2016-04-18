@@ -7,7 +7,9 @@ var formBody = $('.formBody');
 
 function data (type, label, id, icon, options) {
   return `
-    <div class="formBody"><input>${type}, ${label}, ${id}, ${icon}, ${options}</input></div>`;
+    <input placeholder="${label}"></input>
+    <i class="fa fa-user"></i> 
+    `;
 }
 
 console.log('all good');
