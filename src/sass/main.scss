@@ -1,0 +1,54 @@
+body {
+  width: 100%;
+}
+
+.container {
+  width: 500px;
+  margin: 20px;
+  border: 2px solid #C6CBCF;
+  border-radius: 5px;
+  text-align: auto;
+}
+
+h1 {
+  background-color: #428BCA;
+  color: white;
+  margin-top: 0;
+  padding: 20px;
+}
+
+.formBody {
+  position: relative;
+
+}
+
+input {
+  width: 400px;
+  margin: 0;
+  padding: 10px;
+  background-color: white;
+  border: 2px solid #D3D7D9;
+  border-radius: 5px;
+}
+
+i {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.footer {
+  background-color: #C9DEF0;
+  padding: 20px;
+  margin-top: 30px;
+
+}
+button {
+  width: 150px;
+  height: 50px;
+  color: white;
+  background-color: #428BCA;
+  border-radius: 5px;
+  border: 1px solid #3583C6;
+
+
+}
