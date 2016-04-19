@@ -26,8 +26,8 @@ h1 {
 
 .fieldBox {
   position: relative;
+  color: #A9AEBE;
 }
-
 input {
   width: 400px;
   margin: 10px;
@@ -37,11 +37,20 @@ input {
   border: 2px solid #D3D7D9;
   border-radius: 5px;
 }
+ textarea {
+   width: 400px;
+   border-radius: 5px;
+   padding: 10px;
+   padding-left: 30px;
 
-.textarea {
-  width: 400px;
-  border-radius: 5px;
-  padding: 10px;
+   border: 2px solid #D3D7D9;
+   margin-left: 10px;
+
+ }
+
+// .textarea {
+// }
+option {
 
 }
 
@@ -63,6 +72,4 @@ button {
   background-color: #428BCA;
   border-radius: 5px;
   border: 1px solid #3583C6;
-
-
 }

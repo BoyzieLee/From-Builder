@@ -7,12 +7,21 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
+// import input from './input';
+
+var _textarea = require('./textarea');
+
+var _textarea2 = _interopRequireDefault(_textarea);
+
+var _menuoptions = require('./menuoptions');
+
+var _menuoptions2 = _interopRequireDefault(_menuoptions);
+
 var baseURL = 'http://json-data.herokuapp.com/forms';
 var formBody = (0, _jquery2['default'])('.formBody');
 
 // don't need these variable for menuOptions and textarea
 // var menuOptions = $('.Select Language');
-// var textarea = $('.textarea');
 
 // function inputText(form)
 function data(type, label, id, icon, options) {
@@ -32,6 +41,15 @@ formReq.then(function (res) {
   // console.log(res.results);
   res.forEach(function (forms) {
     var html = data(forms.type, forms.label, forms.id, forms.icon, forms.options);
+
+    if (forms.type === 'textarea') {
+      var html = (0, _textarea2['default'])(forms);
+    } else if (forms.type === 'menuoptions') {
+      var html = (0, _menuoptions2['default'])(forms);
+      // } else {
+      //   var html = input(forms);
+    }
+
     formBody.append(html);
   });
 
@@ -67,7 +85,40 @@ formReq.then(function (res) {
 //   }
 // );
 
-},{"jquery":2}],2:[function(require,module,exports){
+},{"./menuoptions":2,"./textarea":3,"jquery":4}],2:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+function menuoptions(forms) {
+
+  var options = '';
+
+  obj.options.forEach(function (option) {
+    options += '<option value="' + option.value + '">' + option.label + '</option>';
+  });
+
+  return '\n    <div class="formElement" id="' + obj.id + '">\n      <select>\n        <option>' + obj.label + '</option>\n        ' + options + '\n      </select>\n    </div>\n  ';
+}
+
+exports['default'] = menuoptions;
+module.exports = exports['default'];
+
+},{}],3:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+function textarea(type, label, id, options) {
+  return "\n  <div class=\"fieldBox\">\n    <textarea placeholder=\"" + label + "\"></textarea>\n  </div>\n    ";
+}
+
+exports["default"] = textarea;
+module.exports = exports["default"];
+
+},{}],4:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.2.3
  * http://jquery.com/

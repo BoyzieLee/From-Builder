@@ -1,11 +1,13 @@
 import $ from 'jquery';
+// import input from './input';
+import textarea from './textarea';
+import menuoptions from './menuoptions';
 
 var baseURL = 'http://json-data.herokuapp.com/forms';
 var formBody = $('.formBody');
 
 // don't need these variable for menuOptions and textarea
 // var menuOptions = $('.Select Language');
-// var textarea = $('.textarea');
 
 // function inputText(form)
 function data (type, label, id, icon, options) {
@@ -26,11 +28,20 @@ console.log('all good');
 // the var formReq makea a request to the server
 var formReq = $.getJSON(baseURL);
 // the .then request goes through once the callback is resolved.
-  formReq.then(
-    function(res){
+  formReq.then( function(res){
       // console.log(res.results);
       res.forEach(function (forms) {
         var html = data(forms.type, forms.label, forms.id, forms.icon, forms.options);
+        
+
+        if (forms.type === 'textarea') {
+          var html = textarea(forms);
+        } else if  (forms.type === 'menuoptions') {
+          var html = menuoptions(forms);
+        // } else {
+        //   var html = input(forms);
+        }
+
         formBody.append(html);
       });
 

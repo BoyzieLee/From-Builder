@@ -19,7 +19,8 @@ h1 {
   width: 350px; }
 
 .fieldBox {
-  position: relative; }
+  position: relative;
+  color: #A9AEBE; }
 
 input {
   width: 400px;
@@ -30,10 +31,13 @@ input {
   border: 2px solid #D3D7D9;
   border-radius: 5px; }
 
-.textarea {
+textarea {
   width: 400px;
   border-radius: 5px;
-  padding: 10px; }
+  padding: 10px;
+  padding-left: 30px;
+  border: 2px solid #D3D7D9;
+  margin-left: 10px; }
 
 i {
   position: absolute;
