@@ -24,6 +24,10 @@ h1 {
 
 }
 
+.fieldBox {
+  position: relative;
+}
+
 input {
   width: 400px;
   margin: 10px;
@@ -38,7 +42,7 @@ input {
   width: 400px;
   border-radius: 5px;
   padding: 10px;
-  
+
 }
 
 i {

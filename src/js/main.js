@@ -2,22 +2,30 @@ import $ from 'jquery';
 
 var baseURL = 'http://json-data.herokuapp.com/forms';
 var formBody = $('.formBody');
-var menuOptions = $('.Select Language');
-var textarea = $('.textarea');
-// function inputText(form)
 
+// don't need these variable for menuOptions and textarea
+// var menuOptions = $('.Select Language');
+// var textarea = $('.textarea');
+
+// function inputText(form)
 function data (type, label, id, icon, options) {
   return `
+  <div class="fieldBox">
     <input placeholder="${label}"></input>
-    <i class="fa fa-user"></i>
+    <i class="fa ${icon}"></i>
+  </div>
     `;
 }
+
+// this is how Tim put the icons on the page.///////////
+{/*<i class="fa ${obj.icon}"></i>*/}
+
 // This is the comment box.///////////////////////
-{/*<textarea name="${textarea}" placeholder="${label}"></textarea>*/}
-
+// {/*<textarea name="${textarea}" placeholder="${label}"></textarea>*/}
 console.log('all good');
-
+// the var formReq makea a request to the server
 var formReq = $.getJSON(baseURL);
+// the .then request goes through once the callback is resolved.
   formReq.then(
     function(res){
       // console.log(res.results);
@@ -25,6 +33,8 @@ var formReq = $.getJSON(baseURL);
         var html = data(forms.type, forms.label, forms.id, forms.icon, forms.options);
         formBody.append(html);
       });
+
+// add if/else statement here
 
 // The commet box if else or .then statment should go here...///////
       // res.forEach(function(textarea){
@@ -35,15 +45,11 @@ var formReq = $.getJSON(baseURL);
     }
   )
 
-
-
 //
 // var dataReq = $.getJSON(url);
 // dataReq.then(function (){
 //   console.log();
-
 // });
-
 
 // function moviePlanets (climate, films) {
 //   return `<li>${climate} * ${films}</li>`;
