@@ -9,12 +9,15 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 var baseURL = 'http://json-data.herokuapp.com/forms';
 var formBody = (0, _jquery2['default'])('.formBody');
-
+var menuOptions = (0, _jquery2['default'])('.Select Language');
+var textarea = (0, _jquery2['default'])('.textarea');
 // function inputText(form)
 
 function data(type, label, id, icon, options) {
-  return '\n    <input placeholder="' + label + '"></input>\n    <i class="fa fa-user"></i> \n    ';
+  return '\n    <input placeholder="' + label + '"></input>\n    <i class="fa fa-user"></i>\n    ';
 }
+// This is the comment box.///////////////////////
+{/*<textarea name="${textarea}" placeholder="${label}"></textarea>*/}
 
 console.log('all good');
 
@@ -25,6 +28,13 @@ formReq.then(function (res) {
     var html = data(forms.type, forms.label, forms.id, forms.icon, forms.options);
     formBody.append(html);
   });
+
+  // The commet box if else or .then statment should go here...///////
+  // res.forEach(function(textarea){
+  //   var html = ${forms.textarea};
+  //   console.log('textarea');
+  //   var html = data()
+  // })
 });
 
 //

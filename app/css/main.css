@@ -27,6 +27,11 @@ input {
   border: 2px solid #D3D7D9;
   border-radius: 5px; }
 
+.textarea {
+  width: 400px;
+  border-radius: 5px;
+  padding: 10px; }
+
 i {
   position: absolute;
   top: 22px;
